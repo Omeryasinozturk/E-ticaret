@@ -1,7 +1,8 @@
 import { Card, CardContent, CardMedia, Typography,Button,  CardActions } from "@mui/material";
-import { IProduct } from "../Model/IProduct";
+import { IProduct } from "../../Model/IProduct";
 import { AddShoppingCart } from "@mui/icons-material";
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from "react-router";
 
 
 
@@ -20,7 +21,7 @@ export default function Product({product} : Props)
    <CardActions>
       
       <Button size="small" variant="outlined" startIcon={<AddShoppingCart/>} color="success">Add to cart</Button>
-      <Button size="small" variant="contained"  startIcon ={<SearchIcon/>} color="primary"> View</Button>
+      <Button component={Link} to={`/catalog/${product.id}`} size="small" variant="contained"  startIcon ={<SearchIcon/>} color="primary"> View</Button>
 
    </CardActions>
     </CardContent>
