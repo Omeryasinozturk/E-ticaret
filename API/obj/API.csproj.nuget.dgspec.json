@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\YASIN\\Desktop\\E-ticaret\\API\\API.csproj": {}
+    "C:\\Users\\YASIN\\Desktop\\E-ticaret\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\YASIN\\Desktop\\E-ticaret\\API\\API.csproj": {
+    "C:\\Users\\YASIN\\Desktop\\E-ticaret\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\YASIN\\Desktop\\E-ticaret\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\YASIN\\Desktop\\E-ticaret\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\YASIN\\Desktop\\E-ticaret\\API\\API.csproj",
+        "projectPath": "C:\\Users\\YASIN\\Desktop\\E-ticaret\\api\\API.csproj",
         "packagesPath": "C:\\Users\\YASIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\YASIN\\Desktop\\E-ticaret\\API\\obj\\",
+        "outputPath": "C:\\Users\\YASIN\\Desktop\\E-ticaret\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

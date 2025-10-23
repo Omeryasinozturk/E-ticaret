@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { IProduct } from "../../Model/IProduct";
 import ProductList from "./ProductList";
 import { CircularProgress } from "@mui/material";
+import requests from "../../api/requests";
 
 export default function CatalogPage() {
 
@@ -10,7 +11,7 @@ export default function CatalogPage() {
 
 
   useEffect (()=>{
-  fetch("http://localhost:5173/api/products").then(response => response.json()).then(data => setProducts(data)).finally( ()=>setLoading(false));
+    requests.Catalog.list().then(data => setProducts(data)).finally( ()=>setLoading(false));
   },[]);
     if  (loading) return <CircularProgress />;
   
