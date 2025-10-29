@@ -6,24 +6,24 @@ namespace API.Data;
 public class DataContext : DbContext
 {
     public DataContext(DbContextOptions options) : base (options)
-    {
-        
+    {   
     }
     public DbSet<Product> Products { get; set; }
+    public DbSet<Cart> Carts => Set<Cart>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<Product>().HasData(
-            new List<Product>
-            {  
-             new Product{ Id=1,Name="Iphone 17",Description="Telefon AÇIKLAMASI",ImageUrl="1.jpg",IsActive=true,Stock=100,Price=70000},
-             new Product{ Id=2,Name="Iphone 17 PRO",Description="Telefon AÇIKLAMASI",ImageUrl="2.jpg",IsActive=true,Stock=100,Price=80000},
-             new Product{ Id=3,Name="Iphone 17 PRO MAX",Description="Telefon AÇIKLAMASI",ImageUrl="3.jpg",IsActive=false,Stock=100,Price=90000},
-             new Product{ Id=4,Name="Xiaomi 17 PRO",Description="Telefon AÇIKLAMASI",ImageUrl="4.jpg",IsActive=true,Stock=100,Price=50000},
-             new Product{ Id=5,Name="Xiaomi 17 PRO MAX",Description="Telefon AÇIKLAMASI",ImageUrl="5.jpg",IsActive=true,Stock=100,Price=57000}
-
+            new List<Product> {
+             new Product { Id=1, Name="Apple Watch Series 1", Description="Apple Watch Series", ImageUrl="1.jpg", Price=70000,  IsActive=true, Stock=100  },
+             new Product { Id=2, Name="Apple Watch Series 2", Description="Telefon açıklaması", ImageUrl="2.jpg", Price=80000,  IsActive=true, Stock=100  },
+             new Product { Id=3, Name="Apple Watch Series 3", Description="Telefon açıklaması", ImageUrl="3.jpg", Price=90000, IsActive=false, Stock=100  },
+             new Product { Id=4, Name="Xiaomi Redmi Watch 1", Description="Telefon açıklaması", ImageUrl="4.jpg", Price=100000, IsActive=true, Stock=100  },
+             new Product { Id=5, Name="Xiaomi Redmi Watch 2", Description="Telefon açıklaması", ImageUrl="5.jpg", Price=100000,      IsActive=true, Stock=100  },
+             new Product { Id=6, Name="Xiaomi Redmi Watch 3", Description="Telefon açıklaması", ImageUrl="6.jpg", Price=100000, IsActive=true, Stock=100  },
+             new Product { Id=7, Name="Xiaomi Redmi Watch 4", Description="Telefon açıklaması", ImageUrl="7.jpg",  Price=100000, IsActive=true, Stock=100  }
             }
         );
     }
