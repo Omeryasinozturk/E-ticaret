@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IProduct } from "../../Model/IProduct";
+import { IProduct } from "../../model/IProduct";
 import ProductList from "./ProductList";
 import { CircularProgress } from "@mui/material";
 import requests from "../../api/requests";
