@@ -6,17 +6,19 @@ import { Link } from "react-router";
 import { useState } from "react";
 import requests from "../../api/requests";
 import { LoadingButton } from "@mui/lab";
-import { useCartContext } from "../../context/CartContext";
 import { toast } from "react-toastify";
 import { currenyTRY } from "../../utils/formatCurrency";
+import { useAppDispatch } from "../../hooks/hooks";
+import { setCart } from "../cart/cartSlice";
 
 interface Props {
     product: IProduct
 }
 
 export default function Product({product}: Props) {
+
   const [loading, setLoading] = useState(false);
-  const { setCart } = useCartContext();
+  const dispatch = useAppDispatch();
 
   function handleAddItem(productId: number)
   {
@@ -24,7 +26,7 @@ export default function Product({product}: Props) {
 
     requests.Cart.addItem(productId)
       .then(cart => {
-        setCart(cart);
+        dispatch(setCart(cart));
         toast.success("Sepetinize eklendi.");
     })
       .catch(error => console.log(error))
@@ -39,7 +41,7 @@ export default function Product({product}: Props) {
           {product.name}
         </Typography>
         <Typography variant="body2" color="secondary">
-          {  currenyTRY.format(product.price)} 
+          { currenyTRY.format(product.price) }
         </Typography>
       </CardContent>
       <CardActions>
